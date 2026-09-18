@@ -88,8 +88,7 @@ The server also runs inside `Avalonia.Headless.XUnit` tests: `new UiAutomationSe
 
 Tags `v<version>` publish both packages to nuget.org through [Trusted Publishing](https://learn.microsoft.com/nuget/nuget-org/trusted-publishing):
 no API key is stored anywhere. One-time setup: on nuget.org → Trusted Publishing, add a policy for repository owner
-`TomasBouda`, repository `TomLabs.UiAutomation`, workflow file `build.yml`; in the GitHub repository add the variable
-`NUGET_USER` = the nuget.org profile name. Then bump `VersionPrefix` in `Directory.Build.props`, add the changelog
+`TomasBouda`, repository `TomLabs.UiAutomation`, workflow file `build.yml`. Then bump `VersionPrefix` in `Directory.Build.props`, add the changelog
 section and push the tag.
 
 ## Notes
