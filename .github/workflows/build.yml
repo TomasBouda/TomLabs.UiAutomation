@@ -1,0 +1,30 @@
+name: Build
+
+on:
+  push:
+    branches: [master]
+    tags: ['v*']
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            10.0.x
+      - run: dotnet build -c Release
+      - run: dotnet test -c Release --no-build
+      - run: dotnet pack src/TomLabs.UiAutomation -c Release -o nupkg --no-build
+      - run: dotnet pack src/TomLabs.UiAutomation.Tool -c Release -o nupkg --no-build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nupkg
+          path: nupkg/*.nupkg
+      # Tags v<version> publish to nuget.org; the version comes from Directory.Build.props and must match the tag.
+      - if: startsWith(github.ref, 'refs/tags/v')
+        run: dotnet nuget push "nupkg/*.nupkg" --api-key "${{ secrets.NUGET_API_KEY }}" --source https://api.nuget.org/v3/index.json --skip-duplicate

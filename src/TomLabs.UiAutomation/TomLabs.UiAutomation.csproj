@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>TomLabs.UiAutomation</RootNamespace>
+    <Description>In-process UI automation channel for Avalonia desktop apps: loopback HTTP endpoints that screenshot the window, dump the visual tree and inject input without touching the desktop, plus a --headless switch. Built for scripted and AI-driven UI checks.</Description>
+    <PackageTags>avalonia;automation;headless;screenshot;testing;claude</PackageTags>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>CS1591;AVA3001</NoWarn>
+    <!-- Raw input (RawPointerEventArgs, ITopLevelImpl.Input) is public in the implementation assemblies but hidden
+         in the reference assemblies as an unstable API; consumers of the package do not need this switch. -->
+    <AvaloniaAccessUnstablePrivateApis>true</AvaloniaAccessUnstablePrivateApis>
+    <!-- Avalonia requires a package that uses private APIs to pin the exact Avalonia version; consumers must use the same one. -->
+    <Avalonia_I_Want_To_Use_Private_Apis_In_Nuget_Package_And_Promise_To_Pin_The_Exact_Avalonia_Version_In_Package_Dependency>true</Avalonia_I_Want_To_Use_Private_Apis_In_Nuget_Package_And_Promise_To_Pin_The_Exact_Avalonia_Version_In_Package_Dependency>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="[11.3.18]" />
+    <PackageReference Include="Avalonia.Desktop" Version="[11.3.18]" />
+    <PackageReference Include="Avalonia.Headless" Version="[11.3.18]" />
+  </ItemGroup>
+</Project>

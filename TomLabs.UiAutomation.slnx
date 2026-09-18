@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/TomLabs.UiAutomation/TomLabs.UiAutomation.csproj" />
+    <Project Path="src/TomLabs.UiAutomation.Tool/TomLabs.UiAutomation.Tool.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/TomLabs.UiAutomation.Tests/TomLabs.UiAutomation.Tests.csproj" />
+  </Folder>
+</Solution>
