@@ -84,6 +84,14 @@ screenshot taken right after them is settled. Windows other than the main one ar
 The server also runs inside `Avalonia.Headless.XUnit` tests: `new UiAutomationServer(UiAutomationHost.ForWindow(window), port, "app", "1.0")`
 — see `tests/` for examples. It forces a headless render tick before hit testing, so clicks work without a running main loop.
 
+## Publishing
+
+Tags `v<version>` publish both packages to nuget.org through [Trusted Publishing](https://learn.microsoft.com/nuget/nuget-org/trusted-publishing):
+no API key is stored anywhere. One-time setup: on nuget.org → Trusted Publishing, add a policy for repository owner
+`TomasBouda`, repository `TomLabs.UiAutomation`, workflow file `build.yml`; in the GitHub repository add the variable
+`NUGET_USER` = the nuget.org profile name. Then bump `VersionPrefix` in `Directory.Build.props`, add the changelog
+section and push the tag.
+
 ## Notes
 
 - The library is built with `AvaloniaAccessUnstablePrivateApis`: raw input is public in Avalonia's implementation
