@@ -1,5 +1,11 @@
 # TomLabs.UiAutomation
 
+[![Build](https://github.com/TomasBouda/TomLabs.UiAutomation/actions/workflows/build.yml/badge.svg)](https://github.com/TomasBouda/TomLabs.UiAutomation/actions/workflows/build.yml)
+[![NuGet TomLabs.UiAutomation](https://img.shields.io/nuget/v/TomLabs.UiAutomation?label=TomLabs.UiAutomation&logo=nuget)](https://www.nuget.org/packages/TomLabs.UiAutomation)
+[![NuGet tomlabs-ui](https://img.shields.io/nuget/v/TomLabs.UiAutomation.Tool?label=tomlabs-ui&logo=nuget)](https://www.nuget.org/packages/TomLabs.UiAutomation.Tool)
+[![Downloads](https://img.shields.io/nuget/dt/TomLabs.UiAutomation?label=downloads)](https://www.nuget.org/packages/TomLabs.UiAutomation)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
 Drive and screenshot an Avalonia desktop app from a script — or from an AI coding session — **without touching
 the desktop**. No `SendKeys`, no cursor moves, no screen capture: the app itself answers on a loopback HTTP port,
 renders its window through `RenderTargetBitmap`, dumps its visual tree and injects clicks, key gestures and text
