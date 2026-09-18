@@ -17,9 +17,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: |
-            8.0.x
-            10.0.x
+          dotnet-version: 10.0.x
       - run: dotnet build -c Release
       - run: dotnet test -c Release --no-build
       - run: dotnet pack src/TomLabs.UiAutomation -c Release -o nupkg --no-build

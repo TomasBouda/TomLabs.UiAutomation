@@ -2,6 +2,11 @@
 
 All notable changes to TomLabs.UiAutomation, newest first. Versions come from `Directory.Build.props`.
 
+## 0.1.1 — 2026-09-18
+
+### Changed
+- Both packages target .NET 10 (`net10.0`) instead of .NET 8, in line with every TomLabs project.
+
 ## 0.1.0 — 2026-09-18
 
 ### Added

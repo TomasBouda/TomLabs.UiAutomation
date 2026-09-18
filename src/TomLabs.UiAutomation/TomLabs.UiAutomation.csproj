@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <RootNamespace>TomLabs.UiAutomation</RootNamespace>
     <Description>In-process UI automation channel for Avalonia desktop apps: loopback HTTP endpoints that screenshot the window, dump the visual tree and inject input without touching the desktop, plus a --headless switch. Built for scripted and AI-driven UI checks.</Description>
     <PackageTags>avalonia;automation;headless;screenshot;testing;claude</PackageTags>
